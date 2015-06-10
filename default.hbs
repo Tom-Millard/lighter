@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}" />
+
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{navigation}}
+
+    <div class="site-wrapper">
+
+        {{{body}}}
+
+        <footer class="site-footer align--center">
+            <section class="small"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        </footer>
+
+    </div>
+
+    {{ghost_foot}}
+</body>
+</html>

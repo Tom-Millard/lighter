@@ -1,0 +1,66 @@
+{{!< default}}
+{{#post}}
+
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="main-header__logo align--center">
+        {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>
+        {{/if}}
+    </div>
+    <div class="main-header__content">
+        <div class="align--center">
+            <h1 class="h1--intro">{{@blog.title}}</h1>
+            <h2 class="h2--strap">{{@blog.description}}</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <small>
+                <time class="post__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                <tags>{{tags prefix=" on "}}</tags>
+            </small>
+            <h1 class="post__title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <hr />
+
+        <footer class="post-footer">
+
+        {{#author}}
+            <section class="author">
+                {{#if image}}
+                <figure class="author__image">
+                    <a href="{{url}}">
+                        <img src="{{image}}" alt="{{name}}" width="100px"/>
+                    </a>
+                </figure>
+                {{/if}}
+
+                <h4 class="author_header"><a href="{{url}}">{{name}}</a></h4>
+
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{else}}
+                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if website}}<p><a href="{{website}}">{{website}}</a></p>{{/if}}
+                </div>
+            </section>
+
+        {{/author}}
+
+        </footer>
+
+    </article>
+</main>
+
+{{/post}}

@@ -1,0 +1,48 @@
+{{!< default}}
+
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="main-header__logo align--center">
+        {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>
+        {{/if}}
+    </div>
+    <div class="main-header__content">
+        <div class="align--center">
+            <h1 class="h1--intro">{{@blog.title}}</h1>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    {{#author}}
+        <section class="author author--page">
+            {{#if image}}
+            <figure class="author__image">
+                <a href="{{url}}">
+                    <img src="{{image}}" alt="{{name}}" width="100px"/>
+                </a>
+            </figure>
+            {{/if}}
+
+            <h4 class="author_header"><a href="{{url}}">{{name}}</a></h4>
+
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{/if}}
+            <div class="author-meta">
+                {{#if website}}<p><a href="{{website}}">{{website}}</a></p>{{/if}}
+            </div>
+        </section>
+
+    {{/author}}
+
+    <div class="arrow align--center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 306 306" class="detail convertSvgInline">
+          <path d="M270.3 58.65L153 175.95 35.7 58.65 0 94.35l153 153 153-153"/>
+        </svg>
+    </div>
+
+    {{> "loop"}}
+</main>

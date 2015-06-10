@@ -1,0 +1,30 @@
+{{!< default}}
+{{#post}}
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="main-header__logo align--center">
+        {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>
+        {{/if}}
+    </div>
+    <div class="main-header__content">
+        <div class="align--center">
+            <h1 class="h1--intro">{{@blog.title}}</h1>
+            <h2 class="h2--strap">{{@blog.description}}</h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <article class="{{post_class}}">
+
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+        </header>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+    </article>
+</main>
+{{/post}}

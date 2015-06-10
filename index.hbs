@@ -1,0 +1,22 @@
+{{!< default}}
+<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="main-header__logo align--center">
+        {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
+            <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>
+        {{/if}}
+    </div>
+    <div class="main-header__content">
+        <div class="align--center">
+            <h1 class="h1--intro">{{@blog.title}}</h1>
+            <h2 class="h2--strap">{{@blog.description}}</h2>
+        </div>
+    </div>
+</header>
+
+{{! The main content area on the homepage }}
+<main id="content" class="content" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+</main>
