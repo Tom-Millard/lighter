@@ -1,5 +1,5 @@
 {{!< default}}
-<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+<header class="main-header" style="{{#if @blog.cover}}background-image: url({{@blog.cover}}){{else}} background-color: #00DBB7;{{/if}}">
     <div class="main-header__logo align--center">
         {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
             <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>

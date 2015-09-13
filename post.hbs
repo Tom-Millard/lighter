@@ -1,20 +1,5 @@
 {{!< default}}
 {{#post}}
-
-<header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <div class="main-header__logo align--center">
-        {{#if @blog.logo}}<a class="main-header__anchor" href="{{@blog.url}}">
-            <img src="{{@blog.logo}}" alt="{{@blog.title}}" width="200px"/></a>
-        {{/if}}
-    </div>
-    <div class="main-header__content">
-        <div class="align--center">
-            <h1 class="h1--intro">{{@blog.title}}</h1>
-            <h2 class="h2--strap">{{@blog.description}}</h2>
-        </div>
-    </div>
-</header>
-
 <main class="content" role="main">
     <article class="{{post_class}}">
 
@@ -44,7 +29,7 @@
                 </figure>
                 {{/if}}
 
-                <h4 class="author_header"><a href="{{url}}">{{name}}</a></h4>
+                <h4 class="author_header">By <a href="{{url}}">{{name}}</a></h4>
 
                 {{#if bio}}
                     <p>{{bio}}</p>
